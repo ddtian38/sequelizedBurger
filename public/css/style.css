@@ -1,0 +1,119 @@
+ body{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background-image: url("/img/five_guys.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ 
+ .jumbotron {
+    margin-top: 10px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background-color:black;
+  }
+  
+  .jumbotron img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width:100%;
+    height:100%;
+    /*  object-fit is not supported on IE  */
+    background-size: cover;
+    opacity: 0.5;
+  }
+
+  .jumbotron h1{
+      position: relative;
+      top: 150px;
+      color: white;
+  }
+
+
+ .form-section{
+    background-color: #C82922;
+    border: 2px solid white;
+    margin-top: 50px;
+}
+
+form{
+    padding: 20px;
+    margin-bottom: 100px;
+    color: white;
+}
+
+.uneaten, .eaten{
+    text-align: center;
+    margin-top: 50px;
+    width: 50%;
+}
+
+.uneaten button{
+    background-color: red;
+}
+
+.eaten button{
+    background-color: black;
+}
+
+.burger-btn{
+    margin: 10px;
+}
+
+h1,h4 {
+    text-align: center;
+}
+
+h4{
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 20px;
+    opacity: 0.8;
+    color:whitesmoke
+}
+
+.uneaten h4{
+    position: relative;
+    left: -40px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+.image-container{
+    float: left;
+    background-color: white;
+    padding: 10px;
+    border: 5px black solid;
+    border-radius: 20px;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+}
+
+.image-container button{
+    width: 90%;
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.image-container img, .image-container img{
+    width: 100%;
+    height: 100%;
+}
