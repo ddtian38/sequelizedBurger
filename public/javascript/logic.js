@@ -36,7 +36,7 @@ $(document).ready(function(){
                 method: "PUT"
 
            }).then(function(res){
-                console.log(res)
+                console.log("11111")
                 location.reload()
 
            })

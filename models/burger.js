@@ -1,31 +1,21 @@
-var orm = require("../config/orm.js");
 
-class Burger {
-    constructor(){
+module.exports = function(sequelize, DataTypes){
+    var Burger = sequelize.define("Burger", {
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
+        },
 
-    }
-    all(cb){
-        orm.selectAll("burgers", function(res){
-            cb(res)
-            console.log("Receiving data.")
-        })
-    }
-
-    insert(cols, vals, cb){
-        orm.insert("burgers", cols , vals, function(res){
-            cb(res)
-            console.log("Inserting data.")
-        })
-    }
-
-    update(val, id, cb){
-        
-        orm.updateOne("burgers", "devoured", val, id, function(res){
-            cb(res)
-            console.log("Updating data.")
-        })
-    }
-}
-
-var burger = new Burger();
-module.exports = burger;
+        img_link: {
+            type:DataTypes.STRING,
+            allowNull: false
+        }
+    });
+    return Burger
+};

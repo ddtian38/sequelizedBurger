@@ -13,7 +13,7 @@
         <div class="uneaten">
                 <h4>Burgers You Haven't Tried</h4>
                     {{#each burgers}}
-                        {{#unless devoured}}
+                        {{#unless this.dataValues.devoured}}
                             {{>buttons/button-block eaten = false text= "(Devour Me!)" disabled = ""}}
                         {{/unless}}
                     {{/each}}  
@@ -21,7 +21,7 @@
         <div class="eaten">
                  <h4>Hope You Enjoyed the Burgers!</h4>               
                     {{#each burgers}}
-                        {{#if devoured}}
+                        {{#if this.dataValues.devoured}}
                             {{>buttons/button-block eaten = true text = "(Devoured)" disabled = "disabled"}}
                         {{/if}}
                     {{/each}}                 
