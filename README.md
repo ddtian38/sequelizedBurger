@@ -12,3 +12,4 @@ The user can type a name who can eat. After the name has been added to the Custo
   Sequelize NPM<br>
   Handlebars.js<br>
   Bootstrap<br>
+  MySQL
