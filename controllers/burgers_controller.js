@@ -1,7 +1,6 @@
 const express = require("express");
 
 const db = require("../models")
-console.log(db.Burger)
 var router = express.Router();
 
 router.get("/api/burgers", function(req, res){
@@ -36,7 +35,6 @@ router.post("/api/burgers/", function(req, res){
         burger_name: req.body.burger,
         img_link: req.body.img_link
     }).then(function(results){
-        console.log(results)
         return res.json(results);
     })
    
@@ -44,15 +42,13 @@ router.post("/api/burgers/", function(req, res){
 })
 
 router.put("/api/burgers/:id", function(req, res){
-    console.log(req.body)
     var customerName = req.body.customer;
-    console.log(customerName);
     //Putting customer name into Customer table
     db.Customer.create({
         customer_name: customerName,
     }).then(function(results){
-        console.log("results");
-        console.log(results);
+
+
         //Adding customer_id column to Burgers Table
         db.Burger.update({
             CustomerId: results.id,
@@ -75,9 +71,8 @@ router.get("/", function(req, res){
     db.Burger.findAll({
         include:[
             {model: db.Customer}
-        ]
+        ], order: ["burger_name"]
     }).then(function(dbBurger){
-        console.log(dbBurger)
         res.render("index", {burgers: dbBurger})
     })
     
