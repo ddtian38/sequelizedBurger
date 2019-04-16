@@ -2,7 +2,8 @@
 <div class="image-container">
   <img src="{{this.dataValues.img_link}}" class="card-img" alt="Burger picture">
   <form action="">
-       <input type="text" name = "customer" id="customer_input">
-       <button id = {{this.dataValues.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}" value = "{{this.dataValues.id}}" {{disabled}}>{{this.dataValues.burger_name}} <br> {{text}}</button> 
+       <input type="text" id="customer_input{{this.dataValues.id}}">
+       <button id = {{this.dataValues.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}" value = "{{this.dataValues.id}}" {{disabled}}>{{this.dataValues.burger_name}} <br> {{text}}</button>
   </form>
+ 
 </div> 

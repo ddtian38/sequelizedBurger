@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    //Creating hamburger object
     $("#submitBtn").on("click", function(e){
         e.preventDefault()
         
@@ -8,8 +9,6 @@ $(document).ready(function(){
             img_link: $("#burger-pic").val()
             
         };
-
-        console.log(burgerObj)
 
         $.ajax({
             url: "/api/burgers/",
@@ -23,9 +22,10 @@ $(document).ready(function(){
     })
 
     $(".uneaten button").on("click", function(e){
-
+            e.preventDefault();
             var id = $(this).val();
-            var customer = $("#customer_input").val().trim()
+            var customer = $("#customer_input"+id).val().trim()
+
             var burgerObj = {
                 burgerID: id,
                 devoured: 1,
@@ -38,8 +38,8 @@ $(document).ready(function(){
                 method: "PUT"
 
            }).then(function(res){
-                console.log("11111")
-                location.reload()
+                console.log("assigned customer to burger")
+                location.reload();
 
            })
 

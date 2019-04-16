@@ -17,6 +17,7 @@ router.get("/api/burgers", function(req, res){
 router.get("/api/burgers/:id", function(req, res){
     db.Burger.findAll({
         where: {id: req.params.id},
+        
         include:[
             {model: db.Customer}
         ]
@@ -26,7 +27,7 @@ router.get("/api/burgers/:id", function(req, res){
 })
 
 router.post("/api/burgers/", function(req, res){
-    console.log(req.body)
+
     //Giving default image if not image URL link is provided
     if(req.body.img_link === ""){
         req.body.img_link = "/img/hamburger.png"
@@ -36,7 +37,7 @@ router.post("/api/burgers/", function(req, res){
         img_link: req.body.img_link
     }).then(function(results){
         console.log(results)
-        res.json(results);
+        return res.json(results);
     })
    
 
@@ -44,41 +45,25 @@ router.post("/api/burgers/", function(req, res){
 
 router.put("/api/burgers/:id", function(req, res){
     console.log(req.body)
+    var customerName = req.body.customer;
+    console.log(customerName);
     //Putting customer name into Customer table
     db.Customer.create({
-        customer_name: req.body.customer,
+        customer_name: customerName,
     }).then(function(results){
+        console.log("results");
+        console.log(results);
         //Adding customer_id column to Burgers Table
-        db.Customer.findAll({
-            attributes: ["id"]
-        },
-            {
-                where: {
-                    customer_name : req.body.customer}
-            })
-            .then(function(result){
-                console.log("aaaaa")
-                var customerID = result[0].dataValues.id;
-                db.Burger.update({
-                    CustomerId: customerID
-                }, {
-                    where: {
-                        id: req.params.id
-                    }
-                }).then(function(){
-                    db.Burger.findOne({
-                        where: {
-                            id: req.params.id
-                        },
-                        include:[
-                            {model: db.Customer}
-                        ]
-                    }).then(function(dbBurger){
-                        console.log(dbBurger)
-                        res.json(dbBurger)
-                    })
-                })
-            })
+        db.Burger.update({
+            CustomerId: results.id,
+            devoured: req.body.devoured
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(function(){
+            return res.redirect("/")
+        })
 
     })
 
@@ -86,9 +71,17 @@ router.put("/api/burgers/:id", function(req, res){
 
 router.get("/", function(req, res){
 
-    db.Burger.findAll({}).then(function(dbburger){
-        res.render("index", {burgers: dbburger})
+    console.log("going to home route")
+    db.Burger.findAll({
+        include:[
+            {model: db.Customer}
+        ]
+    }).then(function(dbBurger){
+        console.log(dbBurger)
+        res.render("index", {burgers: dbBurger})
     })
+    
+
 })
 
 module.exports = router;
