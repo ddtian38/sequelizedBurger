@@ -7,8 +7,8 @@ The user can type a name who can eat. After the name has been added to the Custo
 
 ## Technologies Used:
  
-  Node JS <\n>
-  Express JS
-  Sequelize NPM
-  Handlebars.js
-  Bootstrap
+  Node JS <br>
+  Express JS<br>
+  Sequelize NPM<br>
+  Handlebars.js<br>
+  Bootstrap<br>
