@@ -22,7 +22,7 @@
                  <h4>Hope You Enjoyed the Burgers!</h4>               
                     {{#each burgers}}
                         {{#if this.dataValues.devoured}}
-                            {{>buttons/button-block eaten = true text = "(Devoured)" disabled = "disabled"}}
+                            {{>buttons/eaten-block eaten = true text = "(Devoured)" disabled = "disabled"}}
                         {{/if}}
                     {{/each}}                 
         </div>

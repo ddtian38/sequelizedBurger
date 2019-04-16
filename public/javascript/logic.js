@@ -24,10 +24,12 @@ $(document).ready(function(){
 
     $(".uneaten button").on("click", function(e){
 
-            var id = $(this).val()
+            var id = $(this).val();
+            var customer = $("#customer_input").val().trim()
             var burgerObj = {
                 burgerID: id,
-                devoured: 1
+                devoured: 1,
+                customer: customer
             }
 
            $.ajax({

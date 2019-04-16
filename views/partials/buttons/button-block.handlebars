@@ -1,15 +1,8 @@
-{{!--             
-               <div class="burger-btns">
-                    <button id = {{this.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}">{{this.id}}. {{this.burger_name}}</button><br>
-               </div> --}}
-                {{!-- <li class="list-group-item">
-                     <img src="{{this.img_link}}" alt="burger-pic">
-                     <button id = {{this.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}" value = "{{this.id}}">{{this.id}}. {{this.burger_name}}</button>
-               </li> --}}
-
-
 
 <div class="image-container">
   <img src="{{this.dataValues.img_link}}" class="card-img" alt="Burger picture">
-   <button id = {{this.dataValues.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}" value = "{{this.dataValues.id}}" {{disabled}}>{{this.dataValues.burger_name}} <br> {{text}}</button> 
+  <form action="">
+       <input type="text" name = "customer" id="customer_input">
+       <button id = {{this.dataValues.id}} class="btn btn-primary burger-btn" data-eaten="{{eaten}}" value = "{{this.dataValues.id}}" {{disabled}}>{{this.dataValues.burger_name}} <br> {{text}}</button> 
+  </form>
 </div> 

@@ -6,6 +6,8 @@
  }
  
  .jumbotron {
+    border: 5px solid black;
+    border-radius: 20px;
     margin-top: 10px;
     height: 300px;
     position: relative;
@@ -16,7 +18,8 @@
   .jumbotron img {
     position: absolute;
     z-index: 1;
-    top: 0;
+    left: 0px;
+    top: 0px;
     width:100%;
     height:100%;
     /*  object-fit is not supported on IE  */
@@ -79,30 +82,30 @@ h4{
 }
 
 img{
-    display: block;
     margin: 0 auto;
     width: 200px;
     height: 200px;
 }
+
 .image-container{
     float: left;
     background-color: white;
     padding: 10px;
     border: 5px black solid;
     border-radius: 20px;
-    position: relative;
-    height: 200px;
-    width: 200px;
+    /* position: relative; */
+    height: 275px;
+    width: 275px;
     margin: 5px;
 }
 
 .image-container button{
     width: 90%;
-    position: absolute;
+    /* position: absolute;
     top: 80%;
     left: 45%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
     color: white;
     font-size: 12px;
     padding: 12px 24px;
@@ -113,7 +116,7 @@ img{
 
 }
 
-.image-container img, .image-container img{
-    width: 100%;
-    height: 100%;
+.image-container img{
+    width: 50%;
+    height: 50%;
 }
