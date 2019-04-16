@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "sequelized_burgers_db",
-    "host": "127.0.0.1",
+    "username": "esmnr1xih3d52f81",
+    "password": "oxwh51hntbz2iz4m",
+    "database": "ahesknrlz2uqcnfo",
+    "host": "ctgplw90pifdso61.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   },
@@ -15,12 +15,9 @@
     "port": 3306,
     "dialect": "mysql"
   },
+
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "port": 3306,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
