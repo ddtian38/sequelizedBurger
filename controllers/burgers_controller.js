@@ -62,7 +62,7 @@ router.put("/api/burgers/:id", function(req, res){
                 id: req.params.id
             }
         }).then(function(){
-            return res.redirect("/")
+            res.status(200).send()
         })
 
     })
